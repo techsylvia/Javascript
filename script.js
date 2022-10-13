@@ -27,6 +27,29 @@ calcTempAmplitude(temperatures);
 // how to merge two arrays?
 //
 
+const measureKelvin = function () {
+  const measurement = {
+    type: "temp",
+    unit: "celsius",
+
+    // c) fix
+    // value: Number(prompt("Degrees celsius:")),
+  };
+  // find
+  console.log(measurement.value);
+
+  //console.log(measurement.value);
+  // console.warn(measurement.value);
+  //console.error(measurement.value);
+
+  const Kelvin = measurement.value + 273;
+  return Kelvin;
+};
+
+console.log(measureKelvin());
+
+// using a debugger
+
 const calcTempAmplitudeBug = function (t1, t2) {
   // sub problem merging two arrays
   //const array1 = ["a", "b", "c"];
@@ -38,9 +61,11 @@ const calcTempAmplitudeBug = function (t1, t2) {
 
   let max = 0;
   let min = 0;
+
   for (let i = 0; i < temps.length; i++) {
     const currentTemp = temps[i];
     if (typeof currentTemp !== "number") continue;
+    w;
 
     if (currentTemp > max) max = currentTemp;
     if (currentTemp < min) min = currentTemp;
@@ -50,4 +75,6 @@ const calcTempAmplitudeBug = function (t1, t2) {
 };
 
 const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 4, 5]);
+
+// identify the bug
 console.log(amplitudeBug);
